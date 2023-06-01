@@ -10,12 +10,13 @@ class UserTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
-        ? CircleAvatar(child: Icon(Icons.person))
+        ? const CircleAvatar(child: Icon(Icons.person))
         : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
     return ListTile(
       leading: avatar,
       title: Text(user.name),
       subtitle: Text(user.email),
+      // ignore: sized_box_for_whitespace
       trailing: Container(
         width: 100,
         child: Row(
